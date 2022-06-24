@@ -1,10 +1,8 @@
-from machine import Pin
-from time import sleep
+import machine
+import time
 
-button = Pin(4, Pin.IN,Pin.PULL_UP)
+led = machine.Pin(23, machine.Pin.OUT)
 
-while True:
-  if button.value() == 0:
-    print("Button is Pressed!")
-  else:
-    print("Button is not pressed!")
+led.value(1)  # Led ON
+time.sleep(1) # Delay
+led.value(0)  # Led Off
