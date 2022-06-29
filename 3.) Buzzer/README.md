@@ -53,7 +53,7 @@ buzzer.deinit()
 # `Code: 3`
 # `Mario Game Sound Generator`
 
-![image-3.png](attachment:image-3.png)
+![image](https://user-images.githubusercontent.com/63813881/176357566-9c12fc74-e358-47cc-ae97-49bb57379c4a.png)
 
 <pre>
 import machine
