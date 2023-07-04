@@ -2,45 +2,6 @@
 
 ![image](https://github.com/MuhammadRaheelNaseem/Learn-IoT-With-Esp32-Esp8266-By-Raheel/assets/63813881/6c4c0d06-ea17-4dd4-b9bc-81b966f96550)
 
-# `Code 1:`
-<pre>
-from machine import Pin,PWM
-import time
-
-sg90 = PWM(Pin(22, mode=Pin.OUT))
-sg90.freq(50)
-
-# 0.5ms/20ms = 0.025 = 2.5% duty cycle
-# 2.4ms/20ms = 0.12 = 12% duty cycle
-
-# 0.025*1024=25.6
-# 0.12*1024=122.88
-
-while True:
-    sg90.duty(26)
-    time.sleep(1)
-    sg90.duty(123)
-    time.sleep(1)
-</pre>
-
-# `Code 2:`
-<pre>
-from servo import Servo
-import time
-
-motor=Servo(pin=22) # A changer selon la broche utilisée
-motor.move(0) # tourne le servo à 0°
-time.sleep(0.3)
-motor.move(90) # tourne le servo à 90°
-time.sleep(0.3)
-motor.move(180) # tourne le servo à 180°
-time.sleep(0.3)
-motor.move(90) # tourne le servo à 90°
-time.sleep(0.3)
-motor.move(0) # tourne le servo à 0°
-time.sleep(0.3)
-</pre>
-
 # `Library: servo.py`
 <pre>
 from machine import Pin, PWM
@@ -89,3 +50,43 @@ class Servo:
         self.__motor = PWM(Pin(pin))
         self.__motor.freq(self.__servo_pwm_freq)
 </pre> 
+
+
+# `Code 1:`
+<pre>
+from machine import Pin,PWM
+import time
+
+sg90 = PWM(Pin(22, mode=Pin.OUT))
+sg90.freq(50)
+
+# 0.5ms/20ms = 0.025 = 2.5% duty cycle
+# 2.4ms/20ms = 0.12 = 12% duty cycle
+
+# 0.025*1024=25.6
+# 0.12*1024=122.88
+
+while True:
+    sg90.duty(26)
+    time.sleep(1)
+    sg90.duty(123)
+    time.sleep(1)
+</pre>
+
+# `Code 2:`
+<pre>
+from servo import Servo
+import time
+
+motor=Servo(pin=22) # A changer selon la broche utilisée
+motor.move(0) # tourne le servo à 0°
+time.sleep(0.3)
+motor.move(90) # tourne le servo à 90°
+time.sleep(0.3)
+motor.move(180) # tourne le servo à 180°
+time.sleep(0.3)
+motor.move(90) # tourne le servo à 90°
+time.sleep(0.3)
+motor.move(0) # tourne le servo à 0°
+time.sleep(0.3)
+</pre>
