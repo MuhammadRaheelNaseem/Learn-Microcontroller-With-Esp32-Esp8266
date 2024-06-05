@@ -8,7 +8,7 @@
 ![image](https://user-images.githubusercontent.com/63813881/176358441-63a323d4-f362-4cba-b828-da7d7af820dc.png)
 
 # `Save this with hcsr04.py`
-<pre>
+```python
 import machine, time
 from machine import Pin
 
@@ -80,10 +80,10 @@ class HCSR04:
         # 0.034320 cm/us that is 1cm each 29.1us
         cms = (pulse_time / 2) / 29.1
         return cms
-</pre>
+```
 
 # `Code: 1`
-<pre>
+```python
 from hcsr04 import HCSR04
 from time import sleep
 
@@ -97,7 +97,7 @@ while True:
     distance = sensor.distance_cm()
     print('Distance:', distance, 'cm')
     sleep(1)
-</pre>
+```
 
 
 # `Code: 2`
@@ -106,7 +106,7 @@ while True:
 
 ![image](https://user-images.githubusercontent.com/63813881/176358507-c0d9354c-d439-47a1-81ca-47aa76f5ff0d.png)
 
-<pre>
+```python
 import machine
 import hcsr04
 import time
@@ -131,5 +131,5 @@ while True:
         buzzer.duty(0)
         led.off()
     time.sleep_ms(1000)
-</pre>
+```
 
